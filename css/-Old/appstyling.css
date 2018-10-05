@@ -1,0 +1,155 @@
+/*
+* What are you lifting V1
+* Copyright 2018, stevenhaskell
+* 12/29/2014
+*/
+
+
+/* Table of contents - Example
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+
+
+
+.b-header{
+	height: 25vh;
+	background-color: #48484A;
+	padding: 24px 16px;
+	text-align: center;
+	color: #FFFFFF;
+	position: relative;
+}
+
+.b-header__heading{
+	color: #CCFF00;
+	font-family: Roboto;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 48px;
+	letter-spacing: .025em;
+}
+
+.b-header__container {
+	width: 80%;
+	margin: 0;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+}
+
+p.subheading {
+	font-family: 'Zilla Slab', serif;
+	font-weight: 500;
+	font-style: italic;
+	font-size: 16px;
+	letter-spacing: .75pt;
+	margin-bottom: 0;
+}
+
+.b-platevisual{
+	height: 50vh;
+	background-color: #FFFFFF;
+	padding: 24px 16px;
+	text-align: center;
+	color: #48484A;
+	position: relative;
+}
+
+
+.b-platevisual__container{
+	width: 80%;
+	margin: 0;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	-ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+	color: #48484A;
+	font-family: Roboto;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 28px;
+	letter-spacing: .015px;
+
+}
+
+.b-platevisual__weightfinal{
+	color: #48484A;
+	font-family: Roboto;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 28px;
+	letter-spacing: .015px;
+}
+
+.b-calulatorinputs {
+	height: 25vh;
+	background-color: #8C8E90;
+	padding: 24px 16px;
+	text-align: center;
+	color: #FFFFFF;
+	position: relative;
+}
+
+.b-platerequirements__input li ul {
+	list-style: none;
+	text-align: center;
+	display: inline-block;
+	list-style-type: none;
+}
+
+
+/*
+.b-container {
+
+}
+
+.b-header__heading{
+
+}
+
+.b-header__subheading
+
+.b-platevisual
+
+.b-platevisual__weightfinal
+
+.b-platevisual__barbell
+
+.b-platevisual__weightdifference
+
+.b-platerequirements
+
+.b-platerequirements__subheading
+
+.b-platerequirements__input
+
+.b-infoentry
+
+.b-infoentry__overline
+
+.b-infoentry__input
+
+.b-infoentry__button
+
+.b-infoentry__heading
+
+.b-options
+
+.b-options__overline
+*/

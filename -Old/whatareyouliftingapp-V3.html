@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>What are you lifting?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/appstyling.css">
+        <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:500,500i" rel="stylesheet">
+        <script src="js/Weight Calculation Script-Edited-Jquery-V3.js"> </script>
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div class="b-container">
+            <a name="header"></a><div class="b-header">
+                <div class="b-header__container">
+                	<h1 class="b-header__heading">What are you lifting?</h1>
+                	<p class="b-header__subheading subheading">Type in your weight below and it will calculate the plates needed.</p>
+                </div>
+            </div>
+
+            <!-- Plate Visuals -->
+            <div class="b-platevisual">
+                <div class="b-platevisual__container">
+                    <input type="text" name="Final" class="b-platevisual__weightfinal input-element input-final" min="45" step="1" value="0" readonly="readonly" id="Final">LBS
+                    <div class="b-platevisual__barbell">
+                        <img src="https://qph.fs.quoracdn.net/main-qimg-377c39d784e8860d4ce6142fba0e09e0-c" style="width: 50%">
+                    </div>
+                    <p class="subheading">Offset:</p>
+                    <input type="text" name="Dif" min="0" class="b-platevisual__weightdifference input-element input-difference" step="1" value="0" readonly="readonly" id="diff">LBS
+                </div>
+            </div>
+
+            <!-- Plate Requirements -->
+            <div class="b-platerequirements">
+            	<p class="b-platerequirements__subheading subheading">Plates Needed on Each Side</p>
+            	<ul class="b-platerequirements__input">
+            		<li>45 LBS
+            			<ul>
+            				<input type="number" name="N45" class="input-element input-weightsneeded input-needed45" min="0" step="1" value="0" readonly="readonly" id="req45">
+            			</ul>
+            		</li>
+            		<li>35 LBS
+            			<ul>
+            				<input type="number" name="N35" class="input-element input-weightsneeded input-needed35" min="0" step="1" value="0" readonly="readonly" id="req35">
+            			</ul>
+            		</li>
+            		<li>25 LBS
+            			<ul>
+            				<input type="number" name="N25" class="input-element input-weightsneeded input-needed25" min="0" step="1" value="0" readonly="readonly" id="req25">
+            			</ul>
+            		</li>
+            		<li>10 LBS
+            			<ul>
+            				<input type="number" name="N10" class="input-element input-weightsneeded input-needed10" min="0" step="1" value="0" readonly="readonly" id="req10">
+            			</ul>
+            		</li>
+            		<li>5 LBS
+            			<ul>
+            				<input type="number"name="N5" class="input-element input-weightsneeded input-needed5" min="0" step="1" value="0" readonly="readonly" id="req5">
+            			</ul>
+            		</li>
+            		<li>2.5 LBS
+            			<ul>
+            				<input type="number"name="N2half" class="input-element input-weightsneeded input-needed2" min="0" step="1" value="0" readonly="readonly" id="req2">
+            			</ul>
+            		</li>
+            	</ul>
+            </div>
+        	
+        	<!-- Color Space -->
+            
+            <div></div>
+
+            <!-- Weight Entry -->
+
+            <div class="b-infoentry">
+            	<p class="b-infoentry__overline">WEIGHT</p>
+            	<input type="text" class="b-infoentry__input input-element input-weight" name="Weight" value="225" id="Weight"> LBS
+            	<input type="button" class="b-infoentry__button submit-element input-calculate" name="Calculate" value="Lift" onclick="startcalc()">
+            	<a href="#options"><h2 class="b-infoentry__heading">Options</h2></a>
+            </div>
+
+    		<!-- Options Section -->
+
+    		<a name="options"></a><div class="b-options">
+    			<p class="b-options__overline">BAR WEIGHT</p>
+    			<input type="text" class="b-options__input input-element input-bar" name="Bar" value="45" id="Bar"> LBS
+    			<p>PERCENT OF WEIGHT</p>
+    			<select name="Percentage" class="b-options__percent input-element input-percentage" id="Percentage">
+                    <option value="1" selected="">100% </option>
+                    <option value="0.95">95% </option>
+                    <option value="0.90">90% </option>
+                    <option value="0.85">85% </option>
+                    <option value="0.80">80% </option>
+                    <option value="0.75">75% </option>
+                    <option value="0.70">70% </option>
+                    <option value="0.65">65% </option>
+                    <option value="0.60">60% </option>
+                    <option value="0.55">55% </option>
+                    <option value="0.50">50% </option>
+                    <option value="0.45">45% </option>
+                    <option value="0.40">40% </option>
+                    <option value="0.35">35% </option>
+                    <option value="0.30">30% </option>
+                    <option value="0.25">25% </option>
+                    <option value="0.20">20% </option>
+                    <option value="0.15">15% </option>
+                    <option value="0.10">10% </option>
+                    <option value="0.05">5% </option>         
+                </select>
+    			<p class="b-options__subheading subheading">Plates Available</p>
+            	<ul class="b-options__input">
+            		<li>45 LBS
+            			<ul>
+            				<input type="number" data-weight="45" class="input-element input-weightsavailable input-available45" name="A45" min="0" step="1" value="20" id="avail45">
+            			</ul>
+            		</li>
+            		<li>35 LBS
+            			<ul>
+            				<input type="number" data-weight="35" name="A35" class="input-element input-weightsavailable input-available35" min="0" step="1" value="2" id="avail35">
+            			</ul>
+            		</li>
+            		<li>25 LBS
+            			<ul>
+            				<input type="number" data-weight="25" name="A25" class="input-element input-weightsavailable input-available25" min="0" step="1" value="2" id="avail25">
+            			</ul>
+            		</li>
+            		<li>10 LBS
+            			<ul>
+            				<input type="number" data-weight="10" name="A10" class="input-element input-weightsavailable input-available10" min="0" step="1" value="2" id="avail10">
+            			</ul>
+            		</li>
+            		<li>5 LBS
+            			<ul>
+            				<input type="number" data-weight="5" name="A5" class="input-element input-weightsavailable input-available5" min="0" step="1" value="2" id="avail5">
+            			</ul>
+            		</li>
+            		<li>2.5 LBS
+            			<ul>
+            				<input type="number" data-weight="2.5" name="A2half" class="input-element input-weightsavailable input-available2" min="0" step="1" value="2" id="avail2">
+            			</ul>
+            		</li>
+            	</ul>
+    		</div>
+
+    		<!-- Back to top Button -->
+
+    		<div class="b-returnTop">
+    			<a href="#header"> <h2 class="b-returnTop_heading">Back to Top</h2> </a>
+    		</div>
+        </div>
+
+        <!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>

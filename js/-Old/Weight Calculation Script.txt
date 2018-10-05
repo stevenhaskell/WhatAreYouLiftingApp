@@ -1,0 +1,226 @@
+<script>
+    // Do not copy any part of this script without permission; ExRx.net;http://www.exrx.net
+
+    var weighttolift = 0;
+    var percentage = 0;
+
+    var target = 0;
+    // calculation function starts here
+
+    function startcalc() {
+        // making variables to use the values later.
+
+        // make the weight that have to be lifted after minus the bar weight etc.
+
+        var weighttolift = document.getElementById('Weight').value;
+        var percentage = document.getElementById('Percentage').value;
+        var bar = document.getElementById('Bar').value;
+
+        // targeted values
+        var target = document.getElementById('Target');
+
+        // this funciton calculates the weight percentage , final , difference etc
+
+        targets = Math.floor(weighttolift * percentage);
+
+        // final wieght calculater
+        target.value = targets;
+
+        var finals = Math.floor(parseInt(target.value) - parseInt(bar));
+
+        // calculating total weight and the difference
+        if (collar == 0) {} else {
+            var collar = document.getElementById('collars').value;
+            finals = finals - Math.floor(parseInt(collar));
+        }
+
+        //this function assign the required plate pairs value 
+
+        var weightcalculate = 0;
+
+        var avail100 = document.getElementById('avail100').value;
+
+        if (avail100 == 0) {
+            document.getElementById('req100').value = null;
+
+        } else {
+            //counts the required plates
+            var b = 0;
+            for (var a = 1; a <= avail100; a++) {
+                if (finals >= 200) {
+                    b++;
+                    finals -= 200;
+                    weightcalculate += 200;
+                }
+
+            }
+            if (b == 0) {
+                document.getElementById('req100').value = null;
+            } else {
+
+                document.getElementById('req100').value = b;
+
+            }
+        }
+
+        var avail45 = document.getElementById('avail45').value;
+
+        if (avail45 == 0) {
+            document.getElementById('req45').value = null;
+
+        } else {
+            //counts the required plates
+            var c = 0;
+            for (var a = 1; a <= avail45; a++) {
+                if (finals >= 90) {
+                    c++;
+                    finals -= 90;
+                    weightcalculate += 90;
+                }
+
+            }
+            if (c == 0) {
+                document.getElementById('req45').value = null;
+            } else {
+                document.getElementById('req45').value = c;
+            }
+
+        }
+
+        var avail35 = document.getElementById('avail35').value;
+
+        if (avail35 == 0) {
+            document.getElementById('req35').value = null;
+
+        } else {
+            //counts the required plates
+            var d = 0;
+            for (var a = 1; a <= avail35; a++) {
+                if (finals >= 70) {
+                    d++;
+                    finals -= 70;
+                    weightcalculate += 70;
+                }
+
+            }
+
+            if (d == 0) {
+                document.getElementById('req35').value = null;
+            } else {
+                document.getElementById('req35').value = d;
+            }
+        }
+
+        var avail25 = document.getElementById('avail25').value;
+
+        if (avail25 == 0) {
+            document.getElementById('req25').value = null;
+
+        } else {
+            //counts the required plates
+            var e = 0;
+            for (var a = 1; a <= avail25; a++) {
+                if (finals >= 50) {
+                    e++;
+                    finals -= 50;
+                    weightcalculate += 50;
+                }
+
+            }
+            if (e == 0) {
+                document.getElementById('req25').value = null;
+            } else {
+                document.getElementById('req25').value = e;
+
+            }
+
+        }
+
+        var avail10 = document.getElementById('avail10').value;
+
+        if (avail10 == 0) {
+            document.getElementById('req10').value = null;
+
+        } else {
+            //counts the required plates
+            var f = 0;
+            for (var a = 1; a <= avail10; a++) {
+                if (finals >= 20) {
+                    f++;
+                    finals -= 20;
+                    weightcalculate += 20;
+                }
+
+            }
+            if (f == 0)
+            {
+                document.getElementById('req10').value = null;
+            } else {
+
+                document.getElementById('req10').value = f;
+
+            }
+
+        }
+
+        var avail5 = document.getElementById('avail5').value;
+
+        if (avail5 == 0) {
+            document.getElementById('req5').value = null;
+
+        } else {
+            //counts the required plates
+            var g = 0;
+            for (var a = 1; a <= avail5; a++) {
+                if (finals >= 10) {
+                    g++;
+                    finals -= 10;
+                    weightcalculate += 10;
+                }
+
+            }
+            if (g == 0) {
+                document.getElementById('req5').value = null;
+            } else {
+                document.getElementById('req5').value = g;
+            }
+
+        }
+
+        var avail2 = document.getElementById('avail2').value;
+
+        if (avail2 == 0) {
+            document.getElementById('req2').value = null;
+
+        } else {
+            //counts the required plates
+            var h = 0;
+            for (var a = 1; a <= avail2; a++) {
+                if (finals >= 5) {
+                    h++;
+                    finals -= 5;
+                    weightcalculate += 5;
+                }
+
+            }
+
+            if (h == 0) {
+                document.getElementById('req2').value = null;
+            }
+            else {
+                document.getElementById('req2').value = h;
+
+            }
+
+        }
+
+        var collar2 = document.getElementById('collars').value;
+        var bar2 = document.getElementById('Bar').value;
+        document.getElementById('finalw').value = Math.floor(parseInt(weightcalculate) + parseInt(bar2) + parseInt(collar2));
+        var targ = document.getElementById('Target').value;
+        var finalssweight = document.getElementById('finalw').value;
+
+        document.getElementById('diff').value = Math.floor(parseInt(targ) - parseInt(finalssweight));
+
+    }
+</script>

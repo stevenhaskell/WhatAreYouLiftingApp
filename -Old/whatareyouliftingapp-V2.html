@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>What are you lifting?</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="apple-touch-icon" href="icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div>
+        	<h1>What are you lifting?</h1>
+        	<p>Type in your weight below and it will calculate the plates needed.</p>
+        </div>
+
+        <!-- Plate Visuals -->
+        <div>
+            <input type="number" name="Target" min="45" step="1" value="0" readonly="readonly" id="Target">
+            <input type="hidden" name="Final" min="45" step="1" value="0" readonly="readonly" id="finalw">
+            <p>Offset:</p>
+            <input type="number" name="Dif" min="0" step="1" value="0" readonly="readonly" id="diff">
+        </div>
+
+        <!-- Plate Requirements -->
+        <div>
+        	<p>Plates Needed on Each Side</p>
+        	<ul>
+        		<li>45 LBS
+        			<ul>
+        				<input type="number" name="N45" min="0" step="1" value="0" readonly="readonly" id="req45">
+        			</ul>
+        		</li>
+        		<li>35 LBS
+        			<ul>
+        				<input type="number" name="N35" min="0" step="1" value="0" readonly="readonly" id="req35">
+        			</ul>
+        		</li>
+        		<li>25 LBS
+        			<ul>
+        				<input type="number" name="N25" min="0" step="1" value="0" readonly="readonly" id="req25">
+        			</ul>
+        		</li>
+        		<li>10 LBS
+        			<ul>
+        				<input type="number" name="N10" min="0" step="1" value="0" readonly="readonly" id="req10">
+        			</ul>
+        		</li>
+        		<li>5 LBS
+        			<ul>
+        				<input type="number"name="N5" min="0" step="1" value="0" readonly="readonly" id="req5">
+        			</ul>
+        		</li>
+        		<li>2.5 LBS
+        			<ul>
+        				<input type="number"name="N2half" min="0" step="1" value="0" readonly="readonly" id="req2">
+        			</ul>
+        		</li>
+        	</ul>
+        </div>
+    	
+    	<!-- Color Space -->
+        
+        <div></div>
+
+        <!-- Weight Entry -->
+
+        <div>
+        	<p>WEIGHT</p>
+        	<input type="number" name="Weight" value="225" id="Weight">
+        	<input type="button" name="Calculate" value="Lift" onclick="startcalc()">
+        	<h2>Options</h2>
+        </div>
+
+		<!-- Options Section -->
+
+		<div>
+			<p>BAR WEIGHT</p>
+			<input type="number" name="BAR" value="45" id="Bar">
+			<p>PERCENT OF WEIGHT</p>
+			<select name="percentage" id="Percentage">
+                <option value="1" selected="">100% </option>
+                <option value="0.95">95% </option>
+                <option value="0.90">90% </option>
+                <option value="0.85">85% </option>
+                <option value="0.80">80% </option>
+                <option value="0.75">75% </option>
+                <option value="0.70">70% </option>
+                <option value="0.65">65% </option>
+                <option value="0.60">60% </option>
+                <option value="0.55">55% </option>
+                <option value="0.50">50% </option>
+                <option value="0.45">45% </option>
+                <option value="0.40">40% </option>
+                <option value="0.35">35% </option>
+                <option value="0.30">30% </option>
+                <option value="0.25">25% </option>
+                <option value="0.20">20% </option>
+                <option value="0.15">15% </option>
+                <option value="0.10">10% </option>
+                <option value="0.05">5% </option>         
+            </select>
+			<p>Plates Available</p>
+        	<ul>
+        		<li>45 LBS
+        			<ul>
+        				<input type="number" name="A45" min="0" step="1" value="20" id="avail45">
+        			</ul>
+        		</li>
+        		<li>35 LBS
+        			<ul>
+        				<input type="number" name="A35" min="0" step="1" value="2" id="avail35">
+        			</ul>
+        		</li>
+        		<li>25 LBS
+        			<ul>
+        				<input type="number" name="A25" min="0" step="1" value="2" id="avail25">
+        			</ul>
+        		</li>
+        		<li>10 LBS
+        			<ul>
+        				<input type="number" name="A10" min="0" step="1" value="2" id="avail10">
+        			</ul>
+        		</li>
+        		<li>5 LBS
+        			<ul>
+        				<input type="number"name="A5" min="0" step="1" value="2" id="avail5">
+        			</ul>
+        		</li>
+        		<li>2.5 LBS
+        			<ul>
+        				<input type="number" name="A2half" min="0" step="1" value="2" id="avail2">
+        			</ul>
+        		</li>
+        	</ul>
+		</div>
+
+		<!-- Back to top Button -->
+
+		<div>
+			<h2>Back to Top</h2>
+		</div>
+		<script>
+    var weighttolift = 0;
+    var percentage = 0;
+
+    var target = 0;
+    // calculation function starts here
+
+    function startcalc() {
+        // making variables to use the values later.
+
+        // make the weight that have to be lifted after minus the bar weight etc.
+
+        var weighttolift = document.getElementById('Weight').value;
+        var percentage = document.getElementById('Percentage').value;
+        var bar = document.getElementById('Bar').value;
+
+        // targeted values
+        var target = document.getElementById('Target');
+
+        // this funciton calculates the weight percentage , final , difference etc
+
+        targets = Math.floor(weighttolift * percentage);
+
+        // final wieght calculater
+        target.value = targets;
+
+        var finals = Math.floor(parseInt(target.value) - parseInt(bar));
+
+
+        //this function assign the required plate pairs value 
+
+        var weightcalculate = 0;
+
+        var avail45 = document.getElementById('avail45').value;
+
+        if (avail45 == 0) {
+            document.getElementById('req45').value = null;
+
+        } else {
+            //counts the required plates
+            var c = 0;
+            for (var a = 1; a <= avail45; a++) {
+                if (finals >= 90) {
+                    c++;
+                    finals -= 90;
+                    weightcalculate += 90;
+                }
+
+            }
+            if (c == 0) {
+                document.getElementById('req45').value = null;
+            } else {
+                document.getElementById('req45').value = c;
+            }
+
+        }
+
+        var avail35 = document.getElementById('avail35').value;
+
+        if (avail35 == 0) {
+            document.getElementById('req35').value = null;
+
+        } else {
+            //counts the required plates
+            var d = 0;
+            for (var a = 1; a <= avail35; a++) {
+                if (finals >= 70) {
+                    d++;
+                    finals -= 70;
+                    weightcalculate += 70;
+                }
+
+            }
+
+            if (d == 0) {
+                document.getElementById('req35').value = null;
+            } else {
+                document.getElementById('req35').value = d;
+            }
+        }
+
+        var avail25 = document.getElementById('avail25').value;
+
+        if (avail25 == 0) {
+            document.getElementById('req25').value = null;
+
+        } else {
+            //counts the required plates
+            var e = 0;
+            for (var a = 1; a <= avail25; a++) {
+                if (finals >= 50) {
+                    e++;
+                    finals -= 50;
+                    weightcalculate += 50;
+                }
+
+            }
+            if (e == 0) {
+                document.getElementById('req25').value = null;
+            } else {
+                document.getElementById('req25').value = e;
+
+            }
+
+        }
+
+        var avail10 = document.getElementById('avail10').value;
+
+        if (avail10 == 0) {
+            document.getElementById('req10').value = null;
+
+        } else {
+            //counts the required plates
+            var f = 0;
+            for (var a = 1; a <= avail10; a++) {
+                if (finals >= 20) {
+                    f++;
+                    finals -= 20;
+                    weightcalculate += 20;
+                }
+
+            }
+            if (f == 0)
+            {
+                document.getElementById('req10').value = null;
+            } else {
+
+                document.getElementById('req10').value = f;
+
+            }
+
+        }
+
+        var avail5 = document.getElementById('avail5').value;
+
+        if (avail5 == 0) {
+            document.getElementById('req5').value = null;
+
+        } else {
+            //counts the required plates
+            var g = 0;
+            for (var a = 1; a <= avail5; a++) {
+                if (finals >= 10) {
+                    g++;
+                    finals -= 10;
+                    weightcalculate += 10;
+                }
+
+            }
+            if (g == 0) {
+                document.getElementById('req5').value = null;
+            } else {
+                document.getElementById('req5').value = g;
+            }
+
+        }
+
+        var avail2 = document.getElementById('avail2').value;
+
+        if (avail2 == 0) {
+            document.getElementById('req2').value = null;
+
+        } else {
+            //counts the required plates
+            var h = 0;
+            for (var a = 1; a <= avail2; a++) {
+                if (finals >= 5) {
+                    h++;
+                    finals -= 5;
+                    weightcalculate += 5;
+                }
+
+            }
+
+            if (h == 0) {
+                document.getElementById('req2').value = null;
+            }
+            else {
+                document.getElementById('req2').value = h;
+
+            }
+
+        }
+
+        var bar2 = document.getElementById('Bar').value;
+        document.getElementById('finalw').value = Math.floor(parseInt(weightcalculate) + parseInt(bar2));
+        var targ = document.getElementById('Target').value;
+        var finalssweight = document.getElementById('finalw').value;
+
+        document.getElementById('diff').value = Math.floor(parseInt(targ) - parseInt(finalssweight));
+
+		    }
+		</script>
+
+
+        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>
