@@ -165,13 +165,53 @@ input.input-weightsneeded{
 
 .b-calulatorinputs__inputcontainer{
 	text-align: center;
-
 }
 
 .b-calulatorinputs__infoentry label{
 	text-align: left;
 }
 
+label {
+	font-family: Roboto;
+	font-size: 10px;
+	font-weight: 300;
+	letter-spacing: 1.5px;
+	line-height: 14px;
+}
+
+.input-weight {
+	height: 33px;
+	width: 196px;
+	border-radius: 4px;
+	background-color: #D8D8D8;
+	color: #48484A;
+	font-family: "Zilla Slab";
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 500;
+	letter-spacing: 0.75px;
+	line-height: 20px;
+	margin-right: 5px;
+}
+
+.input-calculate {
+	box-sizing: border-box;
+	height: 38px;
+	width: 88px;
+	border: 2px solid #FF6600;
+	border-radius: 4px;
+	background-color: #CCFF00;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16);
+	color: #5A5A5C;
+	font-family: Roboto;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.75px;
+	line-height: 20px;
+	text-align: center;
+}
+
+}
 
 /*
 .b-container {
