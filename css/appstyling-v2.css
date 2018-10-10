@@ -23,9 +23,18 @@
 */
 
 
+h2 {
+	font-family: Roboto;
+	color: #FCFCFC;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 0.15px;
+	line-height: 28px;
+}
+
 
 .b-header{
-	height: 25vh;
+	height: 18vh;
 	background-color: #48484A;
 	padding: 24px 16px;
 	text-align: center;
@@ -62,7 +71,7 @@ p.subheading {
 }
 
 .b-platevisual{
-	height: 50vh;
+	height: 28vh;
 	background-color: #FFFFFF;
 	padding: 24px 16px;
 	text-align: center;
@@ -98,7 +107,7 @@ p.subheading {
 }
 
 .b-calulatorinputs {
-	height: 25vh;
+	height: 28vh;
 	width: auto;
 	background-color: #8C8E90;
 	text-align: left;
@@ -209,8 +218,6 @@ label {
 	letter-spacing: 0.75px;
 	line-height: 20px;
 	text-align: center;
-}
-
 }
 
 /*
