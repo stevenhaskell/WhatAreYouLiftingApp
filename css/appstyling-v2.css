@@ -253,6 +253,63 @@ label {
     transform: translate(-50%, -100%);
 }
 
+.b-options{
+	background-color: #8C8E90;
+	position: relative;
+	height: auto;
+}
+
+.b-options__inputcontainer{
+	width: 100%;
+	color: #FCFCFC;
+	font-family: Roboto;
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 14px;
+	letter-spacing: 1.5px;
+	height: auto;
+	overflow: visible;
+	text-align: center;
+	padding-top: 16px;
+}
+
+.b-options__optionsinput{
+	display: inline-block;
+    text-align: center;
+}
+
+.b-options__inputcontainer label{
+	text-align: left;
+}
+
+.input-bar{
+	height: 33px;
+    width: 130px;
+    border-radius: 4px;
+    background-color: #D8D8D8;
+    color: #48484A;
+    font-family: "Zilla Slab";
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    line-height: 20px;
+    margin-right: 5px;
+}
+.input-percentage{
+	height: 38px;
+    width: 130px;
+    border-radius: 4px;
+    background-color: #D8D8D8;
+    color: #48484A;
+    font-family: "Zilla Slab";
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    line-height: 20px;
+    margin-right: 0px;
+}
 /*
 .b-container {
 

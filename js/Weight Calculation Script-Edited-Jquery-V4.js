@@ -2,6 +2,8 @@
 
     function startcalc() {
 
+        jQuery(".input-weightsneeded").val(null);
+
         //calls inputs to start calculation
         var weighttolift = jQuery(".input-weight").val();
         var percentage = jQuery(".input-percentage").val();
