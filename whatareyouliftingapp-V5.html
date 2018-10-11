@@ -37,7 +37,7 @@
                 <div class="b-platevisual__container">
                     <p class="b-platevisual__weightfinal"><span class="input-element input-final">0</span> LBS</p>
                     <div class="b-platevisual__barbell">
-                        <img src="https://qph.fs.quoracdn.net/main-qimg-377c39d784e8860d4ce6142fba0e09e0-c" style="width: 50%">
+                        <img src="https://qph.fs.quoracdn.net/main-qimg-377c39d784e8860d4ce6142fba0e09e0-c" style="width: 50%;max-width: 300px;">
                     </div>
                     <p class="subheading">Offset: <span class="input-difference">0</span> LBS</p>
                 </div>
@@ -46,44 +46,48 @@
             <div class="b-calulatorinputs">
                 <!-- Plate Requirements -->
                 <div class="b-calulatorinputs__platerequirements">
-                	<p class="b-calulatorinputs__subheading subheading">Plates Needed on Each Side</p>
-                    <div class="b-calulatorinputs__inputcontainer">
-                        <div class="b-calulatorinputs__input">
-                            <label for="req45">45 LBS</label>
-                            <input type="number" name="N45" class="input-element input-weightsneeded input-needed45"  min="0" step="1" placeholder="0" readonly="readonly" id="req45">
+                    	<p class="b-calulatorinputs__subheading subheading">Plates Needed on Each Side</p>
+                        <div class="b-calulatorinputs__inputcontainer">
+                            <div class="b-calulatorinputs__input">
+                                <label for="req45">45 LBS</label>
+                                <input type="number" name="N45" class="input-element input-weightsneeded input-needed45"  min="0" step="1" placeholder="0" readonly="readonly" id="req45">
+                            </div>
+                            <div class="b-calulatorinputs__input">
+                                <label for="req35">35 LBS</label>
+                                <input type="number" name="N35" class="input-element input-weightsneeded input-needed35" min="0" step="1" placeholder="0" readonly="readonly" id="req35">
+                            </div>
+                            <div class="b-calulatorinputs__input">
+                                <label for="req25">25 LBS</label>
+                                <input type="number" name="N25" class="input-element input-weightsneeded input-needed25" min="0" step="1" placeholder="0" readonly="readonly" id="req25">
+                            </div>
+                            <div class="b-calulatorinputs__input">
+                                <label for="req10">10 LBS</label>
+                                <input type="number" name="N10" class="input-element input-weightsneeded input-needed10" min="0" step="1" placeholder="0" readonly="readonly" id="req10">
+                            </div>
+                            <div class="b-calulatorinputs__input">
+                                <label for="req5">5 LBS</label>
+                                <input type="number"name="N5" class="input-element input-weightsneeded input-needed5" min="0" step="1" placeholder="0" readonly="readonly" id="req5">
+                            </div>
+                            <div class="b-calulatorinputs__input">
+                                <label for="req2">2.5 LBS</label>
+                                <input type="number" name="N2half" class="input-element input-weightsneeded input-needed2" min="0" step="1" placeholder="0" readonly="readonly" id="req2">
+                            </div>
                         </div>
-                        <div class="b-calulatorinputs__input">
-                            <label for="req35">35 LBS</label>
-                            <input type="number" name="N35" class="input-element input-weightsneeded input-needed35" min="0" step="1" placeholder="0" readonly="readonly" id="req35">
-                        </div>
-                        <div class="b-calulatorinputs__input">
-                            <label for="req25">25 LBS</label>
-                            <input type="number" name="N25" class="input-element input-weightsneeded input-needed25" min="0" step="1" placeholder="0" readonly="readonly" id="req25">
-                        </div>
-                        <div class="b-calulatorinputs__input">
-                            <label for="req10">10 LBS</label>
-                            <input type="number" name="N10" class="input-element input-weightsneeded input-needed10" min="0" step="1" placeholder="0" readonly="readonly" id="req10">
-                        </div>
-                        <div class="b-calulatorinputs__input">
-                            <label for="req5">5 LBS</label>
-                            <input type="number"name="N5" class="input-element input-weightsneeded input-needed5" min="0" step="1" placeholder="0" readonly="readonly" id="req5">
-                        </div>
-                        <div class="b-calulatorinputs__input">
-                            <label for="req2">2.5 LBS</label>
-                            <input type="number" name="N2half" class="input-element input-weightsneeded input-needed2" min="0" step="1" placeholder="0" readonly="readonly" id="req2">
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Weight Entry -->
                 <div class="b-calulatorinputs__infoentry">
                     <div class="b-calulatorinputs__inputcontainer">
-                        <div class="b-calulatorinputs__input">
+                        <div class="b-calulatorinputs__weightinput">
                         	<label for="Weight">WEIGHT</label>
                         	<input type="text" class="b-infoentry__input input-element input-weight" name="Weight" placeholder="What are you lifting? (LBS)" id="Weight">
                         	<input type="button" class="b-infoentry__button submit-element input-calculate" name="Calculate" value="LIFT" onclick="startcalc()">
                         </div>
-                    	<a href="#options"><h2 class="b-infoentry__heading">Options</h2></a>
+                    	<a href="#options">
+                            <div class="b-infoentry__dividerheading">
+                                <h2 class="b-infoentry__heading">Options</h2>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

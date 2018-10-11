@@ -1,7 +1,7 @@
 /*
 * What are you lifting V1
 * Copyright 2018, stevenhaskell
-* 12/29/2014
+* 10/10/2018
 */
 
 
@@ -22,6 +22,10 @@
 - Media Queries
 */
 
+p {
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
 
 h2 {
 	font-family: Roboto;
@@ -34,12 +38,13 @@ h2 {
 
 
 .b-header{
-	height: 18vh;
+	height: 24vh;
 	background-color: #48484A;
-	padding: 24px 16px;
 	text-align: center;
 	color: #FFFFFF;
 	position: relative;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16);
+	z-index: 1000;
 }
 
 .b-header__heading{
@@ -49,6 +54,7 @@ h2 {
 	font-weight: 400;
 	line-height: 48px;
 	letter-spacing: .025em;
+	margin: 0px;
 }
 
 .b-header__container {
@@ -71,12 +77,12 @@ p.subheading {
 }
 
 .b-platevisual{
-	height: 28vh;
+	height: 36vh;
 	background-color: #FFFFFF;
-	padding: 24px 16px;
 	text-align: center;
 	color: #48484A;
 	position: relative;
+	z-index: 100;
 }
 
 
@@ -107,21 +113,25 @@ p.subheading {
 }
 
 .b-calulatorinputs {
-	height: 28vh;
+	height: 40vh;
 	width: auto;
 	background-color: #8C8E90;
 	text-align: left;
 	color: #FFFFFF;
 	position: relative;
+	box-shadow: 0 6px 6px 0 rgba(0,0,0,0.26), 0 10px 20px 0 rgba(0,0,0,0.19);
+	z-index: 500;
 }
 
+
 .b-calulatorinputs__platerequirements{
-	height: auto;
+	height: 50%;
 	text-align: center;
 	background-color: #8C8E90;
 	border-bottom: 16px solid #FF6600;
 	overflow:auto;
-	padding: 0px 10px;
+	box-sizing: border-box;
+	padding-top: 2%
 }
 
 .b-calulatorinputs__inputcontainer{
@@ -133,8 +143,9 @@ p.subheading {
 	line-height: 14px;
 	letter-spacing: 1.5px;
 	height: auto;
-	overflow: auto;
+	overflow: visible;
 	text-align: center;
+	padding-top: 2%
 }
 
 
@@ -148,6 +159,12 @@ p.subheading {
 
 .b-calulatorinputs__input:last-child{
 	margin-right: 0px;
+
+}
+
+.b-calulatorinputs__weightinput{
+	display: inline-block;
+	text-align: center;
 
 }
 
@@ -169,12 +186,10 @@ input.input-weightsneeded{
 
 .b-calulatorinputs__infoentry{
 	background-color: #48484A;
-	padding: 8px 10px;
+	height: 50%;
+	position:relative;
 }
 
-.b-calulatorinputs__inputcontainer{
-	text-align: center;
-}
 
 .b-calulatorinputs__infoentry label{
 	text-align: left;
@@ -218,6 +233,24 @@ label {
 	letter-spacing: 0.75px;
 	line-height: 20px;
 	text-align: center;
+}
+
+.b-infoentry__dividerheading{
+	display: block;
+    margin: 16px auto;
+    position: relative;
+	border-bottom: 1px solid #979797;
+	max-width: 288px;
+}
+
+.b-infoentry__heading{
+	background: #48484A;
+    white-space: nowrap;
+    padding: 0 32px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, -100%);
 }
 
 /*
