@@ -371,6 +371,22 @@ input.input-weightsavailable{
 	color: #48484A;
 }
 
+@media screen and (orientation: landscape) {
+  .b-header{
+  	min-height: 136px;
+  }
+  .b-platevisual{
+  	min-height: 204px;
+  }
+  .b-calulatorinputs{
+  	min-height: 245px;
+  }
+  
+}
+
+
+
+
 /*
 .b-container {
 
