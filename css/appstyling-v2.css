@@ -116,6 +116,36 @@ p.subheading {
 	letter-spacing: .015px;
 }
 
+.b-platevisual__weight{
+	position: relative;
+	max-width: 300px;
+	margin: auto;
+}
+
+.b-platevisual__barbell{
+	width: 100%;
+	max-width: 300px;
+	vertical-align: top;
+}
+
+.b-platevisual__plates{
+	position: absolute;
+
+}
+
+.b-platevisual__plates--left{
+	top: 50%;
+	transform: translate(-100%, -50%);
+	left: 21%;
+
+}
+
+.b-platevisual__plates--right{
+	top: 50%;
+	transform: translateY(-50%);
+	left: 79%;
+}
+
 .b-calulatorinputs {
 	height: 40vh;
 	width: auto;
