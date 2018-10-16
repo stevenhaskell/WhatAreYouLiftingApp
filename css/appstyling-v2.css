@@ -130,6 +130,7 @@ p.subheading {
 
 .b-platevisual__plates{
 	position: absolute;
+	display: inline-flex;
 
 }
 
@@ -137,6 +138,7 @@ p.subheading {
 	top: 50%;
 	transform: translate(-100%, -50%);
 	left: 21%;
+    flex-direction: row-reverse; 
 
 }
 
@@ -144,6 +146,12 @@ p.subheading {
 	top: 50%;
 	transform: translateY(-50%);
 	left: 79%;
+}
+
+.b-platevisual__plate{
+	position: relative;
+	margin: 0px 1px;
+	vertical-align: middle;
 }
 
 .b-calulatorinputs {

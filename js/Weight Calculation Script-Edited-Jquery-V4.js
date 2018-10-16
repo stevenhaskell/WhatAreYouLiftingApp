@@ -1,3 +1,4 @@
+// jQuery( document ).ready(function() {
 // calculation function starts here
 
     function startcalc() {
@@ -40,8 +41,12 @@
 
     }
 
+        // var plateloader = jQuery(".b-platevisual__plates").html('<img src="images/45lbs-Plate.svg" class="b-platevisual__plate b-platevisual__plate--45">');
+        // console.log(plateloader);
+
 //plate calulation function
     function platecalculator ( plateWeights, platesAvailable, target, finalWeight) {
+        var weighthtml = "";
         //iterates though the plates availble.
         for (var i = 0; i < platesAvailable.length; i++) {
             //checks if the plate is less than or equal to the weight of plates needed
@@ -59,6 +64,7 @@
                 //Adds plates required
                 if (weightToAdd > 0) {
                     jQuery(".input-weightsneeded").eq(i).val(weightToAdd);
+                      //instead of putting in a string and updating all at once. append the weights each time. Make function and append and then animate. Replace this block.
                 }
 
                 //sets the offset
@@ -69,31 +75,34 @@
 
             }
         }
+        //replaces html for plates required to bar.
+        jQuery(".b-platevisual__plates").html(weighthtml);
     }
 
-//Smooth Scrolling
+  //Smooth Scrolling
 
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+        // Store hash
+        var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
   });
-});
+// });
