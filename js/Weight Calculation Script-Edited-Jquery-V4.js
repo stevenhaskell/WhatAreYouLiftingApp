@@ -64,7 +64,16 @@
                 //Adds plates required
                 if (weightToAdd > 0) {
                     jQuery(".input-weightsneeded").eq(i).val(weightToAdd);
+                    
+                    //itterates through plates being added and saves html to string
+                    for(var x = 0; x < weightToAdd; x++){
                       //instead of putting in a string and updating all at once. append the weights each time. Make function and append and then animate. Replace this block.
+                      var platename = plateWeights[i];
+                      if (platename == 2.5) {
+                        platename = '2half';
+                      }
+                      weighthtml += '<img src="images/'+ platename +'lbs-Plate.svg" class="b-platevisual__plate b-platevisual__plate--' + platename + '">';
+                    }
                 }
 
                 //sets the offset
