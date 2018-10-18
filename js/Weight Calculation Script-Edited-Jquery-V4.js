@@ -119,10 +119,33 @@
     var savedScrollTop
     function saveScroll() {
         var savedScrollTop = jQuery(document).scrollTop(); // save scroll position
+        console.log(savedScrollTop);
     }
-    function restoreScroll() {
-        jQuery(document).scrollTop(savedScrollTop); // restore it
+    function restoreScroll(savedScrollTop){
+        jQuery("html, body").animate({ 
+            scrollTop: savedScrollTop
+        }, 800).offset().top;
     }
+
+//Failed scroll restore functions
+
+    // jQuery("#Weight").blur(function(event) {
+    //     $("html, body").animate({ 
+    //         scrollTop: savedScrollTop
+    //     }, 800).offset().top;
+    // });
+
+
+    /*function restoreScroll() {
+        $("a").on('click', function(event) {
+
+        jQuery(window).scrollTop(savedScrollTop);*/
+/*        window.scrollTo({
+            top: "savedScrollTop", 
+            behavior: "smooth"
+        }); // restore it*/
+    
+
 
 
 
