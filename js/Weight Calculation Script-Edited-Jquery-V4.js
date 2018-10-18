@@ -114,4 +114,19 @@
       } // End if
     });
   });
+
+  //Saves scroll position on focus and restores
+    var savedScrollTop
+    function saveScroll() {
+        var savedScrollTop = jQuery(document).scrollTop(); // save scroll position
+    }
+    function restoreScroll() {
+        jQuery(document).scrollTop(savedScrollTop); // restore it
+    }
+
+
+
+    /*var savedScrollTop = $(document).scrollTop(); // save scroll position
+    <code that changes focus goes here>
+    $(document).scrollTop(savedScrollTop ); // restore it*/
 // });

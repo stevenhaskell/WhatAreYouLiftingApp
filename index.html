@@ -98,7 +98,7 @@
                     <div class="b-calulatorinputs__inputcontainer">
                         <div class="b-calulatorinputs__weightinput">
                         	<label for="Weight">WEIGHT (LBS)</label>
-                        	<input type="number" class="b-infoentry__input input-element input-weight" name="Weight" placeholder="What are you lifting? (LBS)" id="Weight">
+                        	<input type="number" onfocus="saveScroll()" onblur="restoreScroll()" inputmode="numeric" pattern="[0-9]*" class="b-infoentry__input input-element input-weight" name="Weight" placeholder="What are you lifting? (LBS)" id="Weight">
                         	<input type="button" class="b-infoentry__button submit-element input-calculate" name="Calculate" value="LIFT" onclick="startcalc()">
                         </div>
                     	<a href="#options">
@@ -117,7 +117,7 @@
                     <div class="b-options__inputcontainer">
                         <div class="b-options__optionsinput">
                 			<label for="Bar">BAR WEIGHT (LBS)</label>
-                			<input type="text" class="b-options__input input-element input-bar" name="Bar" value="45" id="Bar">
+                			<input type="number" inputmode="numeric" pattern="[0-9]*" class="b-options__input input-element input-bar" name="Bar" value="45" id="Bar">
                         </div>
                         <div class="b-options__optionsinput">
                 			<label for="Percentage">PERCENT OF WEIGHT</label>
@@ -151,27 +151,27 @@
                     <div class="b-options__inputcontainer">
             	       <div class="b-calulatorinputs__input">
                             <label for="avail45">45 LBS</label>
-                            <input type="number" data-weight="45" class="input-element input-weightsavailable input-available45" name="A45" min="0" step="1" value="20" placeholder="20" id="avail45">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="45" class="input-element input-weightsavailable input-available45" name="A45" min="0" step="1" value="20" placeholder="20" id="avail45">
                         </div>
                         <div class="b-calulatorinputs__input">
                             <label for="avail35">35 LBS</label>
-                            <input type="number" data-weight="35" name="A35" class="input-element input-weightsavailable input-available35" min="0" step="1" value="4" placeholder="4" id="avail35">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="35" name="A35" class="input-element input-weightsavailable input-available35" min="0" step="1" value="4" placeholder="4" id="avail35">
                         </div>
                         <div class="b-calulatorinputs__input">
                             <label for="avail25">25 LBS</label>
-                            <input type="number" data-weight="25" name="A25" class="input-element input-weightsavailable input-available25" min="0" step="1" value="4" placeholder="4" id="avail25">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="25" name="A25" class="input-element input-weightsavailable input-available25" min="0" step="1" value="4" placeholder="4" id="avail25">
                         </div>
                         <div class="b-calulatorinputs__input">
                             <label for="avail10">10 LBS</label>
-                            <input type="number" data-weight="10" name="A10" class="input-element input-weightsavailable input-available10" min="0" step="1" value="4" placeholder="4" id="avail10">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="10" name="A10" class="input-element input-weightsavailable input-available10" min="0" step="1" value="4" placeholder="4" id="avail10">
                         </div>
                         <div class="b-calulatorinputs__input">
                             <label for="avail5">5 LBS</label>
-                            <input type="number" data-weight="5" name="A5" class="input-element input-weightsavailable input-available5" min="0" step="1" value="4" placeholder="4" id="avail5">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="5" name="A5" class="input-element input-weightsavailable input-available5" min="0" step="1" value="4" placeholder="4" id="avail5">
                         </div>
                         <div class="b-calulatorinputs__input">
                             <label for="avail2">2.5 LBS</label>
-                            <input type="number" data-weight="2.5" name="A2half" class="input-element input-weightsavailable input-available2" min="0" step="1" value="4" placeholder="4" id="avail2">
+                            <input type="number" inputmode="numeric" pattern="[0-9]*" data-weight="2.5" name="A2half" class="input-element input-weightsavailable input-available2" min="0" step="1" value="4" placeholder="4" id="avail2">
                         </div>
                     </div>
                 </div>
