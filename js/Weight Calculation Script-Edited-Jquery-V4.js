@@ -106,33 +106,50 @@
         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
-        }, 500, function(){
+        }, 800, function(){
      
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
         });
       } // End if
     });
+  });
 
-    //Saves scroll position on focus and restores
-    var savedScrollTop;
+  //Saves scroll position on focus and restores
+    var savedScrollTop
     function saveScroll() {
-        savedScrollTop = jQuery(document).scrollTop();
+        var savedScrollTop = jQuery(document).scrollTop(); // save scroll position
         console.log(savedScrollTop);
     }
-    
-
-    function restoreScroll(){
+    function restoreScroll(savedScrollTop){
         jQuery("html, body").animate({ 
             scrollTop: savedScrollTop
-        }, 250).offset().top;
+        }, 800).offset().top;
     }
 
-    //jQuery event watching
-    jQuery(".input-weight").on("focus", function(){
-        saveScroll();
-    });
-    jQuery(".input-weight").on('blur', function(){
-        restoreScroll()
-    });
-  });
+//Failed scroll restore functions
+
+    // jQuery("#Weight").blur(function(event) {
+    //     $("html, body").animate({ 
+    //         scrollTop: savedScrollTop
+    //     }, 800).offset().top;
+    // });
+
+
+    /*function restoreScroll() {
+        $("a").on('click', function(event) {
+
+        jQuery(window).scrollTop(savedScrollTop);*/
+/*        window.scrollTo({
+            top: "savedScrollTop", 
+            behavior: "smooth"
+        }); // restore it*/
+    
+
+
+
+
+    /*var savedScrollTop = $(document).scrollTop(); // save scroll position
+    <code that changes focus goes here>
+    $(document).scrollTop(savedScrollTop ); // restore it*/
+// });
