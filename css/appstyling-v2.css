@@ -206,6 +206,7 @@ p.subheading {
 .b-calulatorinputs__weightinput{
 	display: inline-block;
 	text-align: center;
+	position: relative;
 
 }
 
@@ -288,6 +289,20 @@ input.input-calculate:active{
 input.input-calculate:focus{
 	outline-style: none;
 }
+
+.b-infoentry__reset{
+	position: absolute;
+	top: 0px;
+	transform: translate(-132%, 132%);
+	color: #808285;	
+	font-family: "Zilla Slab";	
+	font-size: 14px;	
+	font-style: italic;	
+	font-weight: 500;	
+	letter-spacing: 0.75px;	
+	display: none;
+}
+
 
 .b-infoentry__dividerheading{
 	display: block;

@@ -114,6 +114,19 @@
       } // End if
     });
 
+    //show reset button on calculate
+    jQuery(".input-calculate").click(function(){
+        jQuery(".b-infoentry__reset").show();
+    });
+
+    //reset inputs and plate visuals
+    jQuery(".b-infoentry__reset").click(function(){
+        jQuery(".input-weight, .input-weightsneeded").val('');
+        jQuery(".input-final, .input-difference").html('0');
+        jQuery(".b-platevisual__plates").html('');
+        jQuery(".b-infoentry__reset").hide();
+    });
+
     //Saves scroll position on focus and restores
     var savedScrollTop;
     function saveScroll() {
