@@ -49,7 +49,7 @@
                         <div class="b-platevisual__plates b-platevisual__plates--right">
                         </div>
                     </div>
-                    <p class="subheading">Offset: <span class="input-difference">0</span> LBS</p>
+                    <p class="b-platevisual__weightdifference subheading">Offset: <span class="input-difference">0</span> LBS</p>
                 </div>
             </div>
 
@@ -89,9 +89,11 @@
                 <div class="b-calulatorinputs__infoentry">
                     <div class="b-calulatorinputs__inputcontainer">
                         <div class="b-calulatorinputs__weightinput">
-                        	<label for="Weight">WEIGHT (LBS)</label>
-                        	<input type="number"  inputmode="numeric" pattern="[0-9]*" class="b-infoentry__input input-element input-weight" name="Weight" placeholder="What are you lifting? (LBS)" id="Weight">
-                            <input type="button" name="reset" value="Reset" class="b-infoentry__reset">
+	                        <div class="b-calulatorinputs__weightinputcontainer">
+	                        	<label for="Weight">WEIGHT (LBS)</label>
+	                        	<input type="number"  inputmode="numeric" pattern="[0-9]*" class="b-infoentry__input input-element input-weight" name="Weight" placeholder="Enter your weight (LBS)" id="Weight">
+	                            <input type="button" name="reset" value="Reset" class="b-infoentry__reset">
+	                        </div>
                         	<input type="button" class="b-infoentry__button submit-element input-calculate" name="Calculate" value="LIFT" onclick="startcalc()">
                         </div>
                     	<a href="#options">

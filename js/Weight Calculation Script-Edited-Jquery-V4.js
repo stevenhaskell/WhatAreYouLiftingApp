@@ -116,7 +116,8 @@
 
     //show reset button on calculate
     jQuery(".input-calculate").click(function(){
-        jQuery(".b-infoentry__reset").show();
+        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").show();
+
     });
 
     //reset inputs and plate visuals
@@ -124,7 +125,7 @@
         jQuery(".input-weight, .input-weightsneeded").val('');
         jQuery(".input-final, .input-difference").html('0');
         jQuery(".b-platevisual__plates").html('');
-        jQuery(".b-infoentry__reset").hide();
+        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").hide();
     });
 
     //Saves scroll position on focus and restores

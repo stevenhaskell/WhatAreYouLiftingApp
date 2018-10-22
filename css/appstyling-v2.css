@@ -114,6 +114,7 @@ p.subheading {
 	font-weight: 500;
 	line-height: 28px;
 	letter-spacing: .015px;
+	display: none;
 }
 
 .b-platevisual__weight{
@@ -152,6 +153,11 @@ p.subheading {
 	position: relative;
 	margin: 0px 1px;
 	vertical-align: middle;
+}
+
+
+.b-platevisual__weightdifference{
+	display: none;
 }
 
 .b-calulatorinputs {
@@ -245,6 +251,11 @@ label {
 	line-height: 14px;
 }
 
+.b-calulatorinputs__weightinputcontainer{
+	position: relative;
+	display: inline-block;
+}
+
 .input-weight {
 	height: 33px;
 	width: 196px;
@@ -292,8 +303,10 @@ input.input-calculate:focus{
 
 .b-infoentry__reset{
 	position: absolute;
-	top: 0px;
-	transform: translate(-132%, 132%);
+	top: 50%;
+	left: 50%;
+	transform: translate(50%, -32%);
+	-webkit-transform: translate(50%, -32%);
 	color: #808285;	
 	font-family: "Zilla Slab";	
 	font-size: 14px;	
@@ -301,6 +314,9 @@ input.input-calculate:focus{
 	font-weight: 500;	
 	letter-spacing: 0.75px;	
 	display: none;
+	background:none;
+    border:none;
+    margin:0;
 }
 
 
