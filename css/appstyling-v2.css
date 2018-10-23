@@ -138,15 +138,17 @@ p.subheading {
 .b-platevisual__plates--left{
 	top: 50%;
 	transform: translate(-100%, -50%);
-	left: 21%;
-    flex-direction: row-reverse; 
+	left: -16%;
+    flex-direction: row-reverse;
+    opacity: 0; 
 
 }
 
 .b-platevisual__plates--right{
 	top: 50%;
 	transform: translateY(-50%);
-	left: 79%;
+	left: 116%;
+	opacity: 0;
 }
 
 .b-platevisual__plate{

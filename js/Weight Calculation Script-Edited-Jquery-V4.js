@@ -84,8 +84,43 @@
 
             }
         }
-        //replaces html for plates required to bar.
-        jQuery(".b-platevisual__plates").html(weighthtml);
+        //replaces and animates html for plates required to bar.
+        //if statment works but need to figureout how to step animation.
+        if (jQuery('.b-platevisual__plate').length > 0) {
+            console.log("Test")
+            //animates plates off
+            jQuery('.b-platevisual__plates--left').animate({
+                opacity: 0,
+                left: "-16%",
+              }, {duration: 500, queue: false });
+            jQuery('.b-platevisual__plates--right').animate({
+                opacity: 0,
+                left: "116%",
+              }, {duration: 500, queue: false });
+            //updates plates
+            jQuery(".b-platevisual__plates").html(weighthtml);
+            //animates plates back on
+            jQuery('.b-platevisual__plates--left').animate({
+                opacity: 1,
+                left: "21%",
+              }, {duration: 500, queue: false });
+            jQuery('.b-platevisual__plates--right').animate({
+                opacity: 1,
+                left: "79%",
+              }, {duration: 500, queue: false });
+        } else {
+            //updates plates
+            jQuery(".b-platevisual__plates").html(weighthtml);
+            //animates plates back on
+            jQuery('.b-platevisual__plates--left').animate({
+                opacity: 1,
+                left: "21%",
+              }, {duration: 500, queue: false });
+            jQuery('.b-platevisual__plates--right').animate({
+                opacity: 1,
+                left: "79%",
+              }, {duration: 500, queue: false });
+        }
     }
 
   //Smooth Scrolling
@@ -129,7 +164,14 @@
     jQuery(".b-infoentry__reset").click(function(){
         jQuery(".input-weight, .input-weightsneeded").val('');
         jQuery(".input-final, .input-difference").html('0');
-        jQuery(".b-platevisual__plates").html('');
+        jQuery('.b-platevisual__plates--left').animate({
+                opacity: 0,
+                left: "-16%",
+              }, {duration: 500, queue: false });
+        jQuery('.b-platevisual__plates--right').animate({
+                opacity: 0,
+                left: "116%",
+              }, {duration: 500, queue: false });
         jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").hide();
     });
 
