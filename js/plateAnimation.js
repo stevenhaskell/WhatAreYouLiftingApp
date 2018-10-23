@@ -71,7 +71,7 @@ function test () {
             //updates plates
             jQuery(".b-platevisual__plates").html(weighthtml);
             //animates plates back on
-            setTimeout(animatePlatesIn, 250);
+            setTimeout(animatePlatesIn(), 250);
         } else {
             //updates plates
             jQuery(".b-platevisual__plates").html(weighthtml);
