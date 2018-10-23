@@ -304,7 +304,7 @@ input.input-calculate:focus{
 .b-infoentry__reset{
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	right: 25%;
 	transform: translate(50%, -32%);
 	-webkit-transform: translate(50%, -32%);
 	color: #808285;	
