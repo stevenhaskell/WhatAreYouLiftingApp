@@ -120,6 +120,11 @@
 
     });
 
+    //hide reset button on weight input
+    jQuery('.input-weight').keyup(function() {
+        jQuery('.b-infoentry__reset').hide();
+    }).keyup();
+
     //reset inputs and plate visuals
     jQuery(".b-infoentry__reset").click(function(){
         jQuery(".input-weight, .input-weightsneeded").val('');
@@ -132,7 +137,6 @@
     var savedScrollTop;
     function saveScroll() {
         savedScrollTop = jQuery(document).scrollTop();
-        console.log(savedScrollTop);
     }
     
 
