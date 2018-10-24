@@ -41,7 +41,9 @@
             <!-- Plate Visuals -->
             <div class="b-platevisual">
                 <div class="b-platevisual__container">
-                    <p class="b-platevisual__weightfinal"><span class="input-element input-final">0</span> LBS</p>
+                    <div class="b-platevisual__weightfinalcontainer">
+                        <p class="b-platevisual__weightfinal"><span class="input-element input-final">0</span> LBS</p>
+                    </div>
                     <div class="b-platevisual__weight">
                         <img src="images/BarBell.svg" class="b-platevisual__barbell">
                         <div class="b-platevisual__plates b-platevisual__plates--left">
@@ -49,13 +51,16 @@
                         <div class="b-platevisual__plates b-platevisual__plates--right">
                         </div>
                     </div>
-                    <p class="b-platevisual__weightdifference subheading">Offset: <span class="input-difference">0</span> LBS</p>
+                    <div class="b-platevisual__weightdifferencecontainer">
+                        <p class="b-platevisual__weightdifference subheading">Offset: <span class="input-difference">0</span> LBS</p>
+                    </div>
                 </div>
             </div>
 
             <div class="b-calulatorinputs">
                 <!-- Plate Requirements -->
                 <div class="b-calulatorinputs__platerequirements">
+                    <div class="b-calulatorinputs__platerequirementscontainer">
                     	<p class="b-calulatorinputs__subheading subheading">Plates Needed on Each Side</p>
                         <div class="b-calulatorinputs__inputcontainer">
                             <div class="b-calulatorinputs__input">
@@ -83,11 +88,12 @@
                                 <input type="number" name="N2half" class="input-element input-weightsneeded input-needed2" min="0" step="1" placeholder="0" readonly="readonly" id="req2">
                             </div>
                         </div>
+                    </div>
                 </div>
 
                 <!-- Weight Entry -->
                 <div class="b-calulatorinputs__infoentry">
-                    <div class="b-calulatorinputs__inputcontainer">
+                    <div class="b-calulatorinputs__inputcontainer--weight">
                         <div class="b-calulatorinputs__weightinput">
 	                        <div class="b-calulatorinputs__weightinputcontainer">
 	                        	<label for="Weight">WEIGHT (LBS)</label>

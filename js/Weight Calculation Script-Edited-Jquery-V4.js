@@ -89,7 +89,6 @@
                     
                     //itterates through plates being added and saves html to string
                     for(var x = 0; x < weightToAdd; x++){
-                      //instead of putting in a string and updating all at once. append the weights each time. Make function and append and then animate. Replace this block.
                       var platename = plateWeights[i];
                       if (platename == 2.5) {
                         platename = '2half';
@@ -107,7 +106,6 @@
             }
         }
         //replaces and animates html for plates required to bar.
-        //if statment works but need to figureout how to step animation.
         if (jQuery('.b-platevisual__plate').length > 0) {
             //animates plates off
             animatePlatesOut();
@@ -153,7 +151,12 @@
 
     //show reset button on calculate
     jQuery(".input-calculate").click(function(){
-        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").show();
+        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal").show();
+        if (jQuery(".b-platevisual__weightdifference").text() != "Offset: 0 LBS") {
+            jQuery(".b-platevisual__weightdifference").show();
+        } else {
+            jQuery(".b-platevisual__weightdifference").hide();
+        }
     });
 
     //hide reset button on weight input
