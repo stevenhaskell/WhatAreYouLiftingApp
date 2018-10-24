@@ -112,7 +112,11 @@
             //animates plates off
             animatePlatesOut();
             //updates plates
-            jQuery(".b-platevisual__plates").html(weighthtml);
+            // jQuery(".b-platevisual__plates").html(weighthtml);
+            //updates plates - v2
+            setTimeout(function(){
+                jQuery(".b-platevisual__plates").html(weighthtml);
+            }, 500);
             //animates plates back on
             setTimeout(animatePlatesIn, 500);
         } else {
@@ -141,7 +145,7 @@
         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
-        }, 500, function(){
+        }, 800, function(){
      
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
@@ -185,7 +189,7 @@
     function restoreScroll(){
         jQuery("html, body").animate({ 
             scrollTop: savedScrollTop
-        }, 250).offset().top;
+        }, 500).offset().top;
     }
 
     //jQuery event watching

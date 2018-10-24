@@ -40,6 +40,9 @@ a {
 	text-decoration: none;
 }
 
+.b-container {
+	overflow: hidden;
+}
 
 .b-header{
 	height: 24vh;
@@ -211,6 +214,30 @@ p.subheading {
 
 }
 
+input.input-needed45{
+	border: 2px solid #0000FF;
+}
+
+input.input-needed35{
+	border: 2px solid #FFFF00;
+}
+
+input.input-needed25{
+	border: 2px solid #008000;
+}
+
+input.input-needed10{
+	border: 2px solid #FFFFFF;
+}
+
+input.input-needed5{
+	border: 2px solid #0000FF;
+}
+
+input.input-needed2{
+	border: 2px solid #008000;
+}
+
 .b-calulatorinputs__weightinput{
 	display: inline-block;
 	text-align: center;
@@ -307,8 +334,8 @@ input.input-calculate:focus{
 	position: absolute;
 	top: 50%;
 	right: 25%;
-	transform: translate(50%, -32%);
-	-webkit-transform: translate(50%, -32%);
+	transform: translate(50%, -44%);
+	-webkit-transform: translate(50%, -44%);
 	color: #808285;	
 	font-family: "Zilla Slab";	
 	font-size: 14px;	
@@ -319,6 +346,7 @@ input.input-calculate:focus{
 	background:none;
     border:none;
     margin:0;
+    padding: 5px 5px;
 }
 
 
