@@ -47,22 +47,22 @@
         jQuery('.b-platevisual__plates--left').animate({
             opacity: 0,
             left: "-16%",
-         }, {duration: 500, queue: false });
+         }, {duration: 350, queue: false });
         jQuery('.b-platevisual__plates--right').animate({
             opacity: 0,
             left: "116%",
-         }, {duration: 500, queue: false });
+         }, {duration: 350, queue: false });
     }
 
     function animatePlatesIn() {
         jQuery('.b-platevisual__plates--left').animate({
             opacity: 1,
             left: "21%",
-         }, {duration: 500, queue: false });
+         }, {duration: 350, queue: false });
         jQuery('.b-platevisual__plates--right').animate({
             opacity: 1,
             left: "79%",
-         }, {duration: 500, queue: false });
+         }, {duration: 350, queue: false });
     }
 
 
@@ -111,14 +111,12 @@
         if (jQuery('.b-platevisual__plate').length > 0) {
             //animates plates off
             animatePlatesOut();
-            //updates plates
-            // jQuery(".b-platevisual__plates").html(weighthtml);
             //updates plates - v2
             setTimeout(function(){
                 jQuery(".b-platevisual__plates").html(weighthtml);
             }, 500);
             //animates plates back on
-            setTimeout(animatePlatesIn, 500);
+            setTimeout(animatePlatesIn, 350);
         } else {
             //updates plates
             jQuery(".b-platevisual__plates").html(weighthtml);
@@ -145,7 +143,7 @@
         // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
         $('html, body').animate({
           scrollTop: $(hash).offset().top
-        }, 800, function(){
+        }, 500, function(){
      
           // Add hash (#) to URL when done scrolling (default click behavior)
           window.location.hash = hash;
@@ -156,7 +154,6 @@
     //show reset button on calculate
     jQuery(".input-calculate").click(function(){
         jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").show();
-
     });
 
     //hide reset button on weight input
@@ -168,14 +165,7 @@
     jQuery(".b-infoentry__reset").click(function(){
         jQuery(".input-weight, .input-weightsneeded").val('');
         jQuery(".input-final, .input-difference").html('0');
-        jQuery('.b-platevisual__plates--left').animate({
-                opacity: 0,
-                left: "-16%",
-              }, {duration: 500, queue: false });
-        jQuery('.b-platevisual__plates--right').animate({
-                opacity: 0,
-                left: "116%",
-              }, {duration: 500, queue: false });
+        animatePlatesOut();
         jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").hide();
     });
 
