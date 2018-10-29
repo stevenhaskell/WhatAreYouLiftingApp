@@ -153,8 +153,9 @@
     jQuery(".input-calculate").click(function(){
         //sets bar weight to current inputed bar weight
         var bar = jQuery(".input-bar").val();
-        //checks if the weight input is less than or equal to the bar weight. If it is, update the weigh input and final weight display.
-        if (jQuery(".input-weight").val() <= bar) {
+        //checks if the weight input empty. If it is, update the weigh input as the bar weight and final weight display.
+        if (jQuery(".input-weight").val() == "") {
+            console.log("fired");
             jQuery(".input-weight").val(bar);
             jQuery(".input-final").html(bar);
         }
