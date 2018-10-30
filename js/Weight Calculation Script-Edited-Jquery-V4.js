@@ -174,10 +174,12 @@
 
     //reset inputs and plate visuals
     jQuery(".b-infoentry__reset").click(function(){
+        var bar = jQuery(".input-bar").val();
         jQuery(".input-weight, .input-weightsneeded").val('');
-        jQuery(".input-final, .input-difference").html('0');
+        jQuery(".input-final, .input-difference").html(bar);
         animatePlatesOut();
-        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal, .b-platevisual__weightdifference").hide();
+        jQuery(".b-platevisual__plates").html("");
+        jQuery(".b-infoentry__reset, .b-platevisual__weightdifference").hide();
     });
 
     //Saves scroll position on focus and restores
@@ -200,4 +202,16 @@
     jQuery(".input-weight").on('blur', function(){
         restoreScroll()
     });
+
+    //Updates Bar Weight if plate visuals do not exist.
+    jQuery(".input-bar").on("change", function() {
+        var bar = jQuery(".input-bar").val();
+        if (jQuery('.b-platevisual__plate').length == 0){
+            jQuery(".input-final").html(bar);
+        }
+    });
+
+
   });
+
+
