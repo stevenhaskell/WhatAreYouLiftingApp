@@ -123,7 +123,6 @@
         }
     }
 
-  //Smooth Scrolling
 
   $(document).ready(function(){
     // Add smooth scrolling to all links
@@ -155,11 +154,17 @@
         var bar = jQuery(".input-bar").val();
         //checks if the weight input empty. If it is, update the weigh input as the bar weight and final weight display.
         if (jQuery(".input-weight").val() == "") {
-            console.log("fired");
             jQuery(".input-weight").val(bar);
             jQuery(".input-final").html(bar);
         }
         jQuery(".b-infoentry__reset, .b-platevisual__weightfinal").show();
+/*      Script for weights under 5lbs heavier then the bar not working  
+
+        if (jQuery(".input-weight").val() <= bar+5) {
+            console.log("fired");
+            var offset = jQuery(".input-weight").val() - bar;
+            jQuery(".input-difference").text(offset);
+        }*/
         if (jQuery(".b-platevisual__weightdifference").text() != "Offset: 0 LBS") {
             jQuery(".b-platevisual__weightdifference").show();
         } else {
@@ -174,11 +179,19 @@
 
     //reset inputs and plate visuals
     jQuery(".b-infoentry__reset").click(function(){
+        //sets current bar weight
         var bar = jQuery(".input-bar").val();
+        //resets input for weight and  required plate numbers
         jQuery(".input-weight, .input-weightsneeded").val('');
-        jQuery(".input-final, .input-difference").html(bar);
+        //Updates the weight display to the bar weight
+        jQuery(".input-final").html(bar);
+        //animates plates out
         animatePlatesOut();
-        jQuery(".b-platevisual__plates").html("");
+        //delays plate visual removal until plates animate out
+        setTimeout(function(){
+                jQuery(".b-platevisual__plates").html("");
+            }, 500);
+        //hides the reset and weight offset if any.
         jQuery(".b-infoentry__reset, .b-platevisual__weightdifference").hide();
     });
 
@@ -215,3 +228,14 @@
   });
 
 
+/*Bar weight logic:
+
+if inputted weight is less than the bar + 5lbs
+    subtract the inputed weight from the bar and save as a variable.
+    update the weight offset with that variable.*/
+/*
+    if (jQuery(".input-weight").val() < bar+4) {
+        var offset = jQuery(".input-weight").val() - bar;
+        jQuery(".input-difference").text(offset);
+        jQuery(".input-difference").show();
+    }*/
