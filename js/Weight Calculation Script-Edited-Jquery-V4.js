@@ -121,6 +121,17 @@
             //animates plates back on
             animatePlatesIn();
         }
+        // Script for weights under 5lbs heavier then the bar. Still needs tweaking.
+        var bar = jQuery(".input-bar").val();
+        var bartest = parseInt(bar)+4;
+        if (jQuery(".input-weight").val() <= bartest) {
+            jQuery(".input-final").html(bar);
+            var offset = Math.abs(jQuery(".input-weight").val() - bar);
+            if (jQuery(".input-weight").val() !== bar) {
+                console.log("FIRED");
+            jQuery(".input-difference").text(offset);
+            }
+        }
     }
 
 
@@ -157,14 +168,9 @@
             jQuery(".input-weight").val(bar);
             jQuery(".input-final").html(bar);
         }
-        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal").show();
-/*      Script for weights under 5lbs heavier then the bar not working  
 
-        if (jQuery(".input-weight").val() <= bar+5) {
-            console.log("fired");
-            var offset = jQuery(".input-weight").val() - bar;
-            jQuery(".input-difference").text(offset);
-        }*/
+        jQuery(".b-infoentry__reset, .b-platevisual__weightfinal").show();
+
         if (jQuery(".b-platevisual__weightdifference").text() != "Offset: 0 LBS") {
             jQuery(".b-platevisual__weightdifference").show();
         } else {
