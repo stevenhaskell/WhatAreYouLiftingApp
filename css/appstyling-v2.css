@@ -65,7 +65,7 @@ a {
 }
 
 .b-header__container {
-	width: 80%;
+	width: 85%;
 	margin: 0;
   	position: absolute;
   	top: 50%;
@@ -392,6 +392,7 @@ input.input-calculate:focus{
 
 .b-infoentry__heading{
 	background: #48484A;
+	color: #CCFF00;
     white-space: nowrap;
     padding: 0 32px;
     position: absolute;

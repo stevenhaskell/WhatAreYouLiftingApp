@@ -124,7 +124,7 @@
         // Script for weights under 5lbs heavier then the bar. Still needs tweaking.
         var bar = jQuery(".input-bar").val();
         var bartest = parseInt(bar)+4;
-        if (jQuery(".input-weight").val() <= bartest) {
+        if (jQuery(".input-weight").val() <= bartest && jQuery(".input-weight").val() != "") {
             jQuery(".input-final").html(bar);
             var offset = Math.abs(jQuery(".input-weight").val() - bar);
             if (jQuery(".input-weight").val() !== bar) {
@@ -187,6 +187,8 @@
     jQuery(".b-infoentry__reset").click(function(){
         //sets current bar weight
         var bar = jQuery(".input-bar").val();
+        //resets offset
+        jQuery(".input-difference").text("0")
         //resets input for weight and  required plate numbers
         jQuery(".input-weight, .input-weightsneeded").val('');
         //Updates the weight display to the bar weight
