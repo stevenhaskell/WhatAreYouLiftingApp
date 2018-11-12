@@ -1,10 +1,17 @@
 const filesToCache = [
   '/',
-  'style/main.css',
-  'images/still_life_medium.jpg',
+  'css/appstyling-v2.css',
+  'css/main.css',
+  'js/Weight Calculation Script-Edited-Jquery-V4.js',
+  'images/45lbs-Plate.svg',
+  'images/35lbs-Plate.svg',
+  'images/25lbs-Plate.svg',
+  'images/10lbs-Plate.svg',
+  'images/5lbs-Plate.svg',
+  'images/2halflbs-Plate.svg',
+  'images/favicon-16x16.png',
+  'images/favicon-32x32.png',
   'index.html',
-  'pages/offline.html',
-  'pages/404.html'
 ];
 
 const staticCacheName = 'pages-cache-v1';
