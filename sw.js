@@ -1,17 +1,17 @@
 const filesToCache = [
-  '/',
-  'css/appstyling-v2.css',
-  'css/main.css',
-  'js/Weight Calculation Script-Edited-Jquery-V4.js',
-  'images/45lbs-Plate.svg',
-  'images/35lbs-Plate.svg',
-  'images/25lbs-Plate.svg',
-  'images/10lbs-Plate.svg',
-  'images/5lbs-Plate.svg',
-  'images/2halflbs-Plate.svg',
-  'images/favicon-16x16.png',
-  'images/favicon-32x32.png',
-  'index.html',
+  './',
+  './css/appstyling-v2.css',
+  './css/main.css',
+  './js/Weight Calculation Script-Edited-Jquery-V4.js',
+  './images/45lbs-Plate.svg',
+  './images/35lbs-Plate.svg',
+  './images/25lbs-Plate.svg',
+  './images/10lbs-Plate.svg',
+  './images/5lbs-Plate.svg',
+  './images/2halflbs-Plate.svg',
+  './images/favicon-16x16.png',
+  './images/favicon-32x32.png',
+  './index.html'
 ];
 
 const staticCacheName = 'pages-cache-v1';
@@ -22,33 +22,6 @@ self.addEventListener('install', event => {
     caches.open(staticCacheName)
     .then(cache => {
       return cache.addAll(filesToCache);
-    })
-  );
-});
-
-self.addEventListener('fetch', event => {
-  console.log('Fetch event for ', event.request.url);
-  event.respondWith(
-    caches.match(event.request)
-    .then(response => {
-      if (response) {
-        console.log('Found ', event.request.url, ' in cache');
-        return response;
-      }
-      console.log('Network request for ', event.request.url);
-      return fetch(event.request)
-      .then(response => {
-        // TODO 5 - Respond with custom 404 page
-        return caches.open(staticCacheName).then(cache => {
-          cache.put(event.request.url, response.clone());
-          return response;
-      });
-    });
-
-    }).catch(error => {
-
-      // TODO 6 - Respond with custom offline page
-
     })
   );
 });
@@ -67,6 +40,34 @@ self.addEventListener('activate', event => {
           }
         })
       );
+    })
+  );
+});
+
+self.addEventListener('fetch', event => {
+  console.log('Fetch event for ', event.request.url);
+  event.respondWith(
+    caches.match(event.request)
+    .then(response => {
+      if (response) {
+        console.log('Found ', event.request.url, ' in cache');
+        return response;
+      }
+      console.log('Network request for ', event.request.url);
+      return fetch(event.request)
+      .then(response => {
+        if (response.status === 404) {
+          return caches.match('index.html');
+        }
+        return caches.open(staticCacheName)
+        .then(cache => {
+          cache.put(event.request.url, response.clone());
+          return response;
+        });
+      });
+    }).catch(error => {
+      console.log('Error, ', error);
+      return caches.match('index.html');
     })
   );
 });
