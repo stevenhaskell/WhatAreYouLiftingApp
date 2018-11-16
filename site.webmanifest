@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/",
+    "start_url": "/WhatAreYouLiftingApp/",
     "theme_color": "#CCFF00",
     "background_color": "#CCFF00",
     "display": "standalone"
